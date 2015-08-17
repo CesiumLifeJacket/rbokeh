@@ -114,8 +114,7 @@ make_glyph <- function(fig, type, lname, lgroup, data, args, axis_type_range,
   nas <- is.na(data$y)
   data$x <- data$x[!nas]
   data$y <- data$y[!nas]
-  print(data)
-  
+
   ## spec needs to point to corresponding data
   data_names <- names(data)
   for(nm in data_names)
