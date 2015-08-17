@@ -111,7 +111,9 @@ make_glyph <- function(fig, type, lname, lgroup, data, args, axis_type_range,
   args[long_ind] <- NULL
 
   ## remove NAs in data at this point?
-  data <- na.omit(data)
+  nas <- is.na(data$y)
+  data$x <- data$x[!nas]
+  data$y <- data$y[!nas]
   print(data)
   
   ## spec needs to point to corresponding data
